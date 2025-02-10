@@ -1,51 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body, html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-/* ویدیو به صورت پس‌زمینه */
-#video-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-/* محتوای شیشه‌ای */
 .content {
-    position: relative;
+    position: absolute;  /* تغییر از relative به absolute برای کنترل بهتر */
+    bottom: 20px;         /* قرار گرفتن نزدیک به پایین صفحه */
+    left: 20px;           /* فاصله از سمت چپ صفحه */
+    
     z-index: 1;
     text-align: center;
     color: white;
     padding: 20px;
     background: rgba(0, 0, 0, 0.4); /* پس‌زمینه مشکی نیمه شفاف */
     border-radius: 15px;
-    margin: 20vh auto;
     width: 80%;
-    max-width: 400px;
-    backdrop-filter: blur(10px); /* افکت مات‌کننده */
-    -webkit-backdrop-filter: blur(10px); /* سازگاری با مرورگرهای مختلف */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* سایه برای عمق بیشتر */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* حاشیه سفید کم‌رنگ */
-}
-a {
-    display: inline-block;
-    background-color: #c084fc;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-a:hover {
-    background-color: #9333ea;
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 300px;      /* کمی کوچک‌تر برای جا شدن بهتر */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
