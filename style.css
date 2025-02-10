@@ -1,16 +1,20 @@
+/* ریست اولیه */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* تنظیمات کلی */
 body {
-    font-family: 'Vazirmatn', sans-serif;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
     color: #fff;
     text-align: center;
-    overflow: hidden;
+    background: #000;
 }
 
+/* ویدیو پس‌زمینه */
 #background-video {
     position: fixed;
     top: 0;
@@ -19,46 +23,54 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    filter: brightness(60%); /* کاهش روشنایی برای وضوح متن */
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
+/* محتوای اصلی */
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /* بک‌گراند نیمه شفاف */
+    border-radius: 10px;
     animation: fadeIn 2s ease-in-out;
 }
 
+/* عنوان */
 h1 {
     font-size: 4em;
-    color: #FFD700;
     margin-bottom: 10px;
+    color: #FFD700; /* طلایی */
 }
 
+/* توضیحات */
 p {
     font-size: 1.5em;
-    color: #eee;
     margin-bottom: 20px;
+    color: #eee;
 }
 
+/* دکمه تماس */
 .btn {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 30px;
     border: none;
     border-radius: 5px;
     text-decoration: none;
+    font-size: 1.2em;
     transition: background 0.3s ease;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #FF5722;
+    background-color: #FF5722; /* تغییر رنگ هنگام هاور */
 }
 
+/* انیمیشن فید-این */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
