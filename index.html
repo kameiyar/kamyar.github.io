@@ -20,19 +20,34 @@
     <h1>Contact Me</h1>
     <p>Click the button below to reach me on Telegram:</p>
     <a href="http://t.me/Kameiyar" target="_blank">Call Me</a>
+
+    <!-- دکمه برای پخش دستی صدا -->
+    <button onclick="playSound()">پخش دوباره صدا</button>
 </div>
 
 <!-- فایل صوتی خوش‌آمدگویی -->
 <audio id="welcome-audio" src="sounds/Dariche.mp3"></audio>
 
 <script>
-    // پخش خودکار صدا هنگام ورود به سایت
+    // پخش خودکار صدا هنگام لود شدن سایت
     window.addEventListener('load', function() {
         var audio = document.getElementById('welcome-audio');
-        audio.play().catch(function(error) {
+
+        // بی‌صدا کردن اولیه برای دور زدن محدودیت مرورگر
+        audio.muted = true;
+        audio.play().then(function() {
+            audio.muted = false; // فعال کردن صدا پس از شروع پخش
+        }).catch(function(error) {
             console.log('پخش خودکار صدا مسدود شد:', error);
         });
     });
+
+    // تابع برای پخش دوباره صدا با کلیک روی دکمه
+    function playSound() {
+        var audio = document.getElementById('welcome-audio');
+        audio.currentTime = 0; // شروع پخش از ابتدا
+        audio.play();
+    }
 </script>
 
 </body>
