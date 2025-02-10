@@ -22,5 +22,18 @@
     <a href="http://t.me/Kameiyar" target="_blank">Call Me</a>
 </div>
 
+<!-- فایل صوتی خوش‌آمدگویی -->
+<audio id="welcome-audio" src="sounds/Dariche.mp3"></audio>
+
+<script>
+    // پخش خودکار صدا هنگام ورود به سایت
+    window.addEventListener('load', function() {
+        var audio = document.getElementById('welcome-audio');
+        audio.play().catch(function(error) {
+            console.log('پخش خودکار صدا مسدود شد:', error);
+        });
+    });
+</script>
+
 </body>
 </html>
