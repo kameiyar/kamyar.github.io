@@ -1,21 +1,14 @@
-/* ریست اولیه */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-/* تنظیمات کلی */
-body {
+body, html {
+    height: 100%;
     font-family: Arial, sans-serif;
-    overflow: hidden;
-    color: #fff;
-    text-align: center;
-    background: #000;
 }
-
-/* ویدیو پس‌زمینه */
-#background-video {
+/* ویدیو به صورت پس‌زمینه */
+#video-bg {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,54 +16,36 @@ body {
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: brightness(60%); /* کاهش روشنایی برای وضوح متن */
 }
-
-/* محتوای اصلی */
+/* محتوای شیشه‌ای */
 .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5); /* بک‌گراند نیمه شفاف */
-    border-radius: 10px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* عنوان */
-h1 {
-    font-size: 4em;
-    margin-bottom: 10px;
-    color: #FFD700; /* طلایی */
-}
-
-/* توضیحات */
-p {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-    color: #eee;
-}
-
-/* دکمه تماس */
-.btn {
-    background-color: #4CAF50;
+    position: relative;
+    z-index: 1;
+    text-align: center;
     color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4); /* پس‌زمینه مشکی نیمه شفاف */
+    border-radius: 15px;
+    margin: 20vh auto;
+    width: 80%;
+    max-width: 400px;
+    backdrop-filter: blur(10px); /* افکت مات‌کننده */
+    -webkit-backdrop-filter: blur(10px); /* سازگاری با مرورگرهای مختلف */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* سایه برای عمق بیشتر */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* حاشیه سفید کم‌رنگ */
+}
+a {
+    display: inline-block;
+    background-color: #c084fc;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    font-size: 1.2em;
-    transition: background 0.3s ease;
-    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: all 0.3s ease;
 }
-
-.btn:hover {
-    background-color: #FF5722; /* تغییر رنگ هنگام هاور */
-}
-
-/* انیمیشن فید-این */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+a:hover {
+    background-color: #9333ea;
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
