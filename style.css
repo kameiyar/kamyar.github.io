@@ -1,54 +1,52 @@
-*/
-body {
-    font-family: Arial, sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
-    direction: rtl;
-    text-align: right;
+    box-sizing: border-box;
 }
 
-/* استایل هدر */
-header {
-    background-color: #333;
-    color: white;
-    padding: 20px;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
     text-align: center;
-}
-
-/* منو ناوبری */
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #fff;
-    font-weight: bold;
-}
-
-/* بخش‌های سایت */
-section {
     padding: 20px;
-    background-color: white;
-    margin: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* فوتر */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+.container {
     width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 3em;
+    color: #4CAF50;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555;
 }
