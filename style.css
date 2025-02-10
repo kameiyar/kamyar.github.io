@@ -1,18 +1,71 @@
+/* تنظیمات کلی صفحه */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* ویدیو پس‌زمینه */
+#video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ویدیو به‌طور کامل پس‌زمینه رو می‌پوشونه */
+    z-index: -1; /* زیر محتوا قرار می‌گیره */
+}
+
+/* بخش محتوا با افکت شیشه‌ای */
 .content {
-    position: absolute;  /* تغییر از relative به absolute برای کنترل بهتر */
-    bottom: 20px;         /* قرار گرفتن نزدیک به پایین صفحه */
-    left: 20px;           /* فاصله از سمت چپ صفحه */
-    
-    z-index: 1;
-    text-align: center;
-    color: white;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.4); /* پس‌زمینه مشکی نیمه شفاف */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.2); /* نیمه شفاف */
+    padding: 30px 50px;
     border-radius: 15px;
-    width: 80%;
-    max-width: 300px;      /* کمی کوچک‌تر برای جا شدن بهتر */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* افکت شیشه‌ای */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #fff;
+}
+
+/* استایل عنوان */
+h1 {
+    font-size: 2.5em;
+    margin: 0 0 20px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* استایل لینک تلگرام */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+/* افکت هاور روی لینک */
+a:hover {
+    background-color: #0088cc;
+}
+
+/* ریسپانسیو برای صفحه‌های کوچکتر */
+@media (max-width: 600px) {
+    .content {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
 }
