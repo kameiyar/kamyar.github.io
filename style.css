@@ -1,93 +1,135 @@
+/* تنظیمات کلی صفحه */
 body {
     margin: 0;
     padding: 0;
-    background: #000; 
-    background-image: url('IMG_20250211_044652_754.jpg'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-color: #E6E6FA; /* پس‌زمینه بنفش روشن */
+    font-family: 'Vazir', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    overflow: hidden;
     position: relative;
-    text-align: center;
-    color: white;
-    font-family: Arial, sans-serif;
 }
 
-/* انیمیشن متن رنگارنگ */
-.animated-text span {
-    font-size: 50px;
+/* متن انیمیشنی بالای سایت */
+.animated-text {
+    font-size: 32px;
     font-weight: bold;
-    display: inline-block;
-    animation: colorChange 3s infinite alternate;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: rainbow 5s linear infinite;
+    position: absolute;
+    top: 20px;
+    text-align: center;
 }
 
-@keyframes colorChange {
-    0% { color: red; transform: scale(1); }
-    25% { color: orange; transform: scale(1.1); }
-    50% { color: yellow; transform: scale(1); }
-    75% { color: green; transform: scale(1.1); }
-    100% { color: blue; transform: scale(1); }
+/* انیمیشن رنگین‌کمانی برای متن */
+@keyframes rainbow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* دکمه‌های شناور */
 .floating-buttons {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    bottom: 60px; /* فاصله از جمله پایانی */
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.floating-buttons a,
-.phone-btn {
-    background: linear-gradient(45deg, #ff007f, #8a2be2);
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    font-weight: bold;
-    text-align: center;
-}
-
-.floating-buttons a:hover,
-.phone-btn:hover {
-    transform: scale(1.1);
-}
-
-/* شماره تلفن مخفی */
-.phone-number {
-    display: none;
-    position: absolute;
-    top: 100px;
-    right: 20px;
-    background: #fff;
-    color: #000;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    animation: slideDown 0.5s ease-in-out forwards;
-}
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* افکت خطوط رنگی هنگام لمس صفحه */
-body:active::after {
-    content: '';
-    position: absolute;
+    gap: 15px;
+    justify-content: center;
     width: 100%;
-    height: 4px;
-    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
-    animation: moveLine 1s linear forwards;
-    opacity: 0.8;
 }
 
-@keyframes moveLine {
-    from { top: 100%; opacity: 1; }
-    to { top: -4px; opacity: 0; }
+.button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.5s;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1); /* افکت شیشه‌ای */
+    color: rgba(255, 255, 255, 0.8); /* متن سفید شفاف */
+    backdrop-filter: blur(10px); /* افکت بلور */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* سایه */
+}
+
+.button:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.3); /* تغییر پس‌زمینه هنگام هاور */
+}
+
+/* استایل اختصاصی برای هر دکمه */
+.telegram { border: 2px solid #0088cc; }
+.instagram { border: 2px solid #e1306c; }
+.phone { border: 2px solid #34a853; }
+
+/* استایل شماره تلفن */
+.phone-number {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(90deg, white, red, blue, orange, green);
+    background-clip: text;
+    -webkit-background-clip: text;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+    animation: colorShift 5s linear infinite;
+    visibility: hidden;
+}
+
+/* انیمیشن تغییر رنگ شماره تلفن */
+@keyframes colorShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* نمایش شماره تلفن هنگام کلیک */
+:target {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* استایل جمله‌ی پایانی */
+.footer-text {
+    position: fixed;
+    bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    gap: 10px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+/* انیمیشن درخشان (Glow) برای کلمات */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+    50% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+    100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
+}
+
+/* استایل و رنگ هر کلمه در جمله‌ی پایانی */
+.coded {
+    color: white;
+    animation: glow 2s infinite alternate;
+}
+
+.by {
+    color: gold;
+    animation: glow 2s infinite alternate;
+}
+
+.kamyar {
+    color: #00bfff; /* آبی روشن */
+    animation: glow 2s infinite alternate;
 }
