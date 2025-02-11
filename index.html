@@ -3,52 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Background with Glass Effect</title>
-    <!-- لینک به فایل CSS خارجی -->
-    <link rel="stylesheet" href="style.css">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">  <!-- لینک به فایل CSS -->
 </head>
 <body>
+    <h1>Hi, my name ez Kami</h1>
 
-<!-- ویدیو پس‌زمینه -->
-<video id="video-bg" autoplay muted loop>
-    <source src="VID_20250211_004902_427.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+    <!-- دکمه تلگرام -->
+    <a href="https://t.me/kameiyar" class="floating-button telegram-button" target="_blank">Telegram Me</a>
 
-<!-- محتوای سایت با افکت شیشه‌ای -->
-<div class="content">
-    <h1>Contact Me</h1>
-    <p>Click the button below to reach me on Telegram:</p>
-    <a href="http://t.me/Kameiyar" target="_blank">Call Me</a>
+    <!-- دکمه اینستاگرام -->
+    <a href="https://www.instagram.com/farahani_530?igsh=OXkzOTB2OWlkYW9u" class="floating-button instagram-button" target="_blank">Instagram Me</a>
 
-    <!-- دکمه برای پخش دستی صدا -->
-    <button onclick="playSound()">پخش دوباره صدا</button>
-</div>
+    <!-- دکمه نمایش شماره تلفن -->
+    <input type="checkbox" id="toggle-number" hidden>
+    <label for="toggle-number" class="floating-button show-number-button">Show My Number</label>
 
-<!-- فایل صوتی خوش‌آمدگویی -->
-<audio id="welcome-audio" src="sounds/Dariche.mp3"></audio>
-
-<script>
-    // پخش خودکار صدا هنگام لود شدن سایت
-    window.addEventListener('load', function() {
-        var audio = document.getElementById('welcome-audio');
-
-        // بی‌صدا کردن اولیه برای دور زدن محدودیت مرورگر
-        audio.muted = true;
-        audio.play().then(function() {
-            audio.muted = false; // فعال کردن صدا پس از شروع پخش
-        }).catch(function(error) {
-            console.log('پخش خودکار صدا مسدود شد:', error);
-        });
-    });
-
-    // تابع برای پخش دوباره صدا با کلیک روی دکمه
-    function playSound() {
-        var audio = document.getElementById('welcome-audio');
-        audio.currentTime = 0; // شروع پخش از ابتدا
-        audio.play();
-    }
-</script>
-
+    <!-- شماره تلفن -->
+    <div id="phone-number">+98 939 974 3277</div>
 </body>
 </html>
