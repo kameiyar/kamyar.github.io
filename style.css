@@ -1,103 +1,112 @@
+/* تنظیمات کلی */
 body {
-    font-family: 'Vazir', sans-serif;
-    background: linear-gradient(135deg, #E0BBE4, #957DAD, #D291BC, #FEC8D8, #FFDFD3);
-    color: #000;
-    text-align: center;
+    background-color: #E6E6FA; /* بنفش روشن */
     margin: 0;
     padding: 0;
-    animation: float 6s infinite ease-in-out;
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-h1.title {
-    font-size: 2.5em;
-    margin: 20px 0;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease-in-out;
-}
-
-h1.title:hover {
-    transform: scale(1.1);
-    color: #6A0572;
-}
-
-#loading {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #fff;
+/* نوار بالا برای ساعت و تاریخ */
+.top-bar {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
+    justify-content: space-between;
+    padding: 10px 20px;
+    font-size: 18px;
     font-weight: bold;
-    color: #6A0572;
-    z-index: 1000; /* جلوگیری از تداخل */
-    transition: opacity 1s ease-out;
 }
 
-#loading.hidden {
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
+#clock {
+    color: blue; /* رنگ آبی برای ساعت */
 }
 
-.top-info {
-    text-align: left;
-    padding: 10px;
+#date {
+    color: red; /* رنگ قرمز برای تاریخ */
 }
 
-#clock, #dates div {
-    font-size: 1.2em;
-    margin: 5px 0;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: type 3s steps(30, end) infinite;
+/* متن خوش آمدگویی با تغییر رنگ بی‌نهایت */
+.welcome {
+    font-size: 24px;
+    font-weight: bold;
+    animation: colorChange 5s infinite;
 }
 
-@keyframes type {
-    from { width: 0; }
-    to { width: 100%; }
+@keyframes colorChange {
+    0% { color: red; }
+    25% { color: green; }
+    50% { color: blue; }
+    75% { color: purple; }
+    100% { color: orange; }
 }
 
-.buttons {
-    margin: 20px 0;
+/* دکمه‌ها */
+.button-container {
+    margin: 15px 0;
 }
 
 .btn {
     display: inline-block;
     padding: 10px 20px;
     margin: 5px;
-    border: 2px solid black;
+    border: none;
     border-radius: 5px;
+    text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
-    text-decoration: none;
-    color: black;
+    transition: transform 0.3s;
 }
 
-.btn:active {
-    transform: scale(0.95);
+.btn:hover {
+    transform: scale(1.1);
 }
 
-.instagram {
-    background-color: #E1306C;
+/* دکمه‌های خاص */
+.call {
+    background-color: darkgreen;
     color: white;
 }
 
 .telegram {
-    background-color: #0088CC;
+    background-color: #0088cc;
     color: white;
 }
 
-.call {
-    background-color: #34A853;
+.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
     color: white;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+.whatsapp {
+    background-color: lightgreen;
+    color: black;
+    font-size: 20px;
+    padding: 15px 30px;
+}
+
+.playlist {
+    background-color: orange;
+    color: white;
+}
+
+.about {
+    background-color: yellow;
+    color: white;
+}
+
+/* امضای پایین صفحه */
+footer p {
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.coded {
+    color: #C8A2C8; /* یاسی */
+}
+
+.by {
+    color: #8B0000; /* زرشکی */
+}
+
+.kamyar {
+    color: gray; /* طوسی */
 }
