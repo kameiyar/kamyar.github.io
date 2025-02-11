@@ -4,22 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
-    <link rel="stylesheet" href="style.css">  <!-- لینک به فایل CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hi, my name ez Kami</h1>
 
-    <!-- دکمه تلگرام -->
-    <a href="https://t.me/kameiyar" class="floating-button telegram-button" target="_blank">Telegram Me</a>
+    <!-- متن رنگی و انیمیشنی -->
+    <div class="animated-text">
+        <span class="letter">h</span>
+        <span class="letter">i</span>
+        <span> </span>
+        <span class="letter">m</span>
+        <span class="letter">y</span>
+        <span> </span>
+        <span class="letter">n</span>
+        <span class="letter">a</span>
+        <span class="letter">m</span>
+        <span class="letter">e</span>
+        <span> </span>
+        <span class="letter">i</span>
+        <span class="letter">s</span>
+        <span> </span>
+        <span class="letter">k</span>
+        <span class="letter">a</span>
+        <span class="letter">m</span>
+        <span class="letter">i</span>
+    </div>
 
-    <!-- دکمه اینستاگرام -->
-    <a href="https://www.instagram.com/farahani_530?igsh=OXkzOTB2OWlkYW9u" class="floating-button instagram-button" target="_blank">Instagram Me</a>
+    <!-- دکمه‌های شناور برای تلگرام، اینستاگرام و شماره تلفن -->
+    <div class="floating-buttons">
+        <a href="https://t.me/kameiyar" target="_blank" class="btn telegram">Telegram Me</a>
+        <a href="https://www.instagram.com/farahani_530?igsh=OXkzOTB2OWlkYW9u" target="_blank" class="btn instagram">Instagram Me</a>
+        <button class="btn phone" onclick="togglePhone()">Show Phone</button>
+    </div>
 
-    <!-- دکمه نمایش شماره تلفن -->
-    <input type="checkbox" id="toggle-number" hidden>
-    <label for="toggle-number" class="floating-button show-number-button">Show My Number</label>
+    <!-- شماره تلفن که با کلیک نمایان می‌شود -->
+    <div id="phone-number" class="phone-number">+989399743277</div>
 
-    <!-- شماره تلفن -->
-    <div id="phone-number">+98 939 974 3277</div>
+    <script>
+        function togglePhone() {
+            var phoneNumber = document.getElementById("phone-number");
+            phoneNumber.classList.toggle("show");
+        }
+    </script>
+
 </body>
 </html>
