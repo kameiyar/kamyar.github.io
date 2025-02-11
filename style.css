@@ -2,123 +2,66 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Vazir', sans-serif;
+    font-family: sans-serif;
     text-align: center;
-    background: linear-gradient(135deg, #e0bbff, #d1a3ff, #c084ff); /* پس‌زمینه بنفش روشن */
+    background: linear-gradient(135deg, #e0bbff, #d1a3ff, #c084ff); /* بنفش روشن */
     background-size: cover;
-    animation: none; /* حذف انیمیشن پس‌زمینه قبلی */
-}
-
-/* پس‌زمینه بنفش روشن (در صورت نیاز به کلاس مجزا) */
-.purple-background {
-    background: linear-gradient(135deg, #e0bbff, #d1a3ff, #c084ff);
-    background-size: cover;
-}
-
-/* استایل عنوان با انیمیشن حروف رنگی */
-.animated-title {
-    font-size: 40px;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-.animated-title span {
-    display: inline-block;
-    animation: rainbowColors 2s infinite alternate;
-}
-
-/* انیمیشن رنگین‌کمانی حروف */
-@keyframes rainbowColors {
-    0% { color: red; }
-    20% { color: orange; }
-    40% { color: yellow; }
-    60% { color: green; }
-    80% { color: blue; }
-    100% { color: purple; }
-}
-
-/* استایل دکمه‌ها */
-.button-container {
+    height: 100vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+}
+
+/* کانتینر اصلی */
+.container {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 400px;
+}
+
+/* عنوان */
+.title {
+    color: #4a148c;
+    font-size: 28px;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* دکمه‌ها */
+.button-container {
+    display: flex;
+    flex-direction: column;
     gap: 15px;
-    margin: 20px 0;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 15px;
     font-size: 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.3);
-    color: #4a148c;
-    transition: background 0.3s, transform 0.3s;
-    font-weight: bold;
+    background: #8e24aa;
+    color: white;
+    transition: transform 0.3s, background 0.3s;
+    animation: buttonPulse 2s infinite alternate;
 }
 
 button:hover {
-    background: rgba(255, 255, 255, 0.6);
+    background: #6a1b9a;
     transform: scale(1.1);
 }
 
-/* ساعت */
-#clock {
-    font-size: 48px;
-    font-weight: bold;
-    color: white;
-    text-shadow: 0 0 10px #8e24aa, 0 0 20px #6a1b9a, 0 0 30px #4a148c;
-    animation: colorShift 5s infinite alternate;
-    margin: 20px 0;
+/* انیمیشن‌ها */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes colorShift {
-    0% { color: #8e24aa; text-shadow: 0 0 10px #8e24aa, 0 0 20px #d500f9; }
-    25% { color: #d500f9; text-shadow: 0 0 10px #d500f9, 0 0 20px #aa00ff; }
-    50% { color: #aa00ff; text-shadow: 0 0 10px #aa00ff, 0 0 20px #6200ea; }
-    75% { color: #6200ea; text-shadow: 0 0 10px #6200ea, 0 0 20px #4a148c; }
-    100% { color: #4a148c; text-shadow: 0 0 10px #4a148c, 0 0 20px #8e24aa; }
-}
-
-/* شماره تلفن */
-#phoneNumber {
-    font-size: 24px;
-    font-weight: bold;
-    animation: phoneColors 4s infinite alternate;
-    margin: 15px 0;
-}
-
-@keyframes phoneColors {
-    0% { color: #8e24aa; }
-    20% { color: #d500f9; }
-    40% { color: #aa00ff; }
-    60% { color: #6200ea; }
-    80% { color: #4a148c; }
-    100% { color: #8e24aa; }
-}
-
-/* فوتر */
-.footer {
-    margin: 30px 0;
-    font-size: 20px;
-}
-
-.coded {
-    color: white;
-    animation: fade 2s infinite alternate;
-}
-
-.by {
-    color: gold;
-    animation: fade 2s infinite alternate;
-}
-
-.kamyar {
-    color: #b388ff;
-    animation: fade 2s infinite alternate;
-}
-
-@keyframes fade {
-    from { opacity: 0.5; }
-    to { opacity: 1; }
+@keyframes buttonPulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
 }
