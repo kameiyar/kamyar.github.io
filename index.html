@@ -7,32 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background"></div>
+    <!-- عنوان اصلی -->
+    <h1 class="animated-title">ℍ𝕀 𝕄𝕐 ℕ𝔸𝕄𝔼 𝕀𝕊 𝕂𝔸𝕄𝕐𝔸ℝ</h1>
 
-    <!-- عنوان سایت -->
-    <h1 class="animated-title">Kamiyar Info</h1>
+    <!-- ساعت -->
+    <div id="clock"></div>
 
-    <!-- دکمه‌های تلگرام، اینستاگرام، و شماره تلفن -->
-    <div class="buttons">
-        <a href="https://t.me/kameiyar" class="icon telegram">Telegram Me</a>
-        <a href="https://www.instagram.com/farahani_530?igsh=OXkzOTB2OWlkYW9u" class="icon instagram">Instagram Me</a>
-        <button class="icon phone" onclick="showNumber()">Show Number</button>
+    <!-- دکمه‌ها به صورت افقی -->
+    <div class="button-container">
+        <button onclick="window.open('https://t.me/your_telegram', '_blank')">Telegram Me</button>
+        <button onclick="window.open('https://instagram.com/your_instagram', '_blank')">Instagram Me</button>
+        <button id="callButton" onclick="showNumber()">Call Me</button>
     </div>
 
-    <!-- بخش نمایش شماره تلفن -->
-    <div id="phone-number"></div>
-
-    <!-- بخش نمایش ساعت -->
-    <div id="clock" class="clock-style"></div>
-
-    <!-- جمله پایانی -->
-    <p class="footer-text">
-        <span class="coded">Coded</span> 
-        <span class="by">By</span> 
+    <!-- نوشته Coded By Kamyar -->
+    <div class="footer">
+        <span class="coded">Coded</span>
+        <span class="by">By</span>
         <span class="kamyar">Kamyar</span>
-    </p>
+    </div>
 
-    <!-- فایل جاوا اسکریپت -->
     <script src="script.js"></script>
 </body>
 </html>
