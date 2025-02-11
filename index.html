@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +8,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="loading">Loading...</div> <!-- انیمیشن لودینگ -->
 
-    <!-- انیمیشن لودینگ -->
-    <div id="preloader">
-        <div class="loader"></div>
-    </div>
+    <div id="content" style="display: none;"> <!-- محتوای اصلی پس از لودینگ -->
+        <div class="top-info">
+            <div id="welcome">Welcome to My Web Info</div>
+            <div id="clock"></div>
+            <div id="dates">
+                <div id="jalali-date"></div>
+                <div id="gregorian-date"></div>
+                <div id="hijri-date"></div>
+            </div>
+        </div>
 
-    <!-- پیغام خوش آمد گویی -->
-    <div id="welcomeMessage">Welcome to My Web Info</div>
+        <h1 class="title">𝙠𝙖𝙢𝙮𝙖𝙧 𝙞𝙣𝙛𝙤</h1>
 
-    <!-- نمایش تاریخ و ساعت -->
-    <div class="datetime-container">
-        <div id="clock"></div>
-        <div id="dates">
-            <div id="jalali-date"></div>
-            <div id="gregorian-date"></div>
-            <div id="hijri-date"></div>
+        <div class="buttons">
+            <a href="https://www.instagram.com/farahani_530?igsh=OXkzOTB2OWlkYW9u" class="btn instagram">𝙸𝙽𝚂𝚃𝙰𝙶𝚁𝙰𝙼 𝙼𝙴</a>
+            <a href="http://t.me/Kameiyar" class="btn telegram">ᎢᎬᏞᎬᏀᏒᎪᎷ ᎷᎬ</a>
+            <a href="tel:+989399743277" class="btn call">🇨 🇦 🇱 🇱  🇲 🇪  📞</a>
         </div>
     </div>
-
-    <!-- عنوان اصلی -->
-    <h1 class="animated-title">𝙠𝙖𝙢𝙮𝙖𝙧 𝙞𝙣𝙛𝙤</h1>
-
-    <!-- دکمه‌ها -->
-    <div class="button-container">
-        <button class="btn instagram" onclick="window.open('https://www.instagram.com/farahani_530?igsh=OXkzOTB2OWlkYW9u', '_blank')">𝙸𝙽𝚂𝚃𝙰𝙶𝚁𝙰𝙼 𝙼𝙴</button>
-        <button class="btn telegram" onclick="window.open('http://t.me/Kameiyar', '_blank')">ᎢᎬᏞᎬᏀᏒᎪᎷ ᎷᎬ</button>
-        <button class="btn call" onclick="window.location.href='tel:+989399743277'">🇨 🇦 🇱 🇱  🇲 🇪  📞</button>
-    </div>
-
-    <!-- انیمیشن موج -->
-    <div class="wave"></div>
 
     <script src="script.js"></script>
 </body>
