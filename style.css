@@ -2,66 +2,94 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Vazir', sans-serif;
+    background: linear-gradient(135deg, #d1c4e9, #b39ddb, #9575cd, #7e57c2);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite alternate;
     text-align: center;
-    background: linear-gradient(135deg, #e0bbff, #d1a3ff, #c084ff); /* بنفش روشن */
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* کانتینر اصلی */
-.container {
-    background: rgba(255, 255, 255, 0.3);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    width: 90%;
-    max-width: 400px;
+/* انیمیشن پس‌زمینه */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 50% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
-/* عنوان */
+/* استایل عنوان */
 .title {
-    color: #4a148c;
-    font-size: 28px;
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    margin: 20px 0;
+    animation: fadeIn 3s ease-in-out infinite alternate;
 }
 
-/* دکمه‌ها */
+/* افکت فید این */
+@keyframes fadeIn {
+    from { opacity: 0.5; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* استایل دکمه‌ها */
 .button-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     gap: 15px;
+    margin: 20px 0;
 }
 
 button {
-    padding: 15px;
-    font-size: 16px;
+    padding: 12px 24px;
+    font-size: 18px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    background: #8e24aa;
+    background: #9575cd;
     color: white;
     transition: transform 0.3s, background 0.3s;
-    animation: buttonPulse 2s infinite alternate;
+    position: relative;
+    overflow: hidden;
 }
 
 button:hover {
-    background: #6a1b9a;
+    background: #7e57c2;
     transform: scale(1.1);
 }
 
-/* انیمیشن‌ها */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* افکت موجی (Wave Effect) */
+button.wave::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
 }
 
-@keyframes buttonPulse {
-    from { transform: scale(1); }
-    to { transform: scale(1.05); }
+button.wave:active::after {
+    transform: translate(-50%, -50%) scale(4);
+    opacity: 0.2;
+}
+
+/* استایل ساعت دیجیتالی */
+#clock {
+    font-size: 36px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px #7e57c2, 0 0 20px #b39ddb;
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+}
+
+/* افکت ضربان برای ساعت */
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.05); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
 }
