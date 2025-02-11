@@ -1,22 +1,35 @@
-// انیمیشن لودینگ
-window.onload = function() {
-    document.getElementById("preloader").style.display = "none";
-};
+document.addEventListener("DOMContentLoaded", function() {
+    // انیمیشن لودینگ
+    setTimeout(() => {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        alert("Welcome to My Web Info");
+    }, 2000);
 
-// ساعت ایران
-function updateClock() {
-    const now = new Date();
-    const options = { timeZone: 'Asia/Tehran', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-    document.getElementById('clock').innerText = now.toLocaleTimeString('fa-IR', options);
-}
-setInterval(updateClock, 1000);
-updateClock();
+    // ساعت و تاریخ
+    function updateClock() {
+        const now = new Date();
+        const options = { timeZone: 'Asia/Tehran' };
+        document.getElementById('clock').innerText = now.toLocaleTimeString('fa-IR', options);
 
-// تاریخ شمسی، میلادی و قمری
-function updateDate() {
-    const now = new Date();
-    document.getElementById('jalali-date').innerText = new Intl.DateTimeFormat('fa-IR').format(now);
-    document.getElementById('gregorian-date').innerText = new Intl.DateTimeFormat('en-GB').format(now);
-    document.getElementById('hijri-date').innerText = new Intl.DateTimeFormat('ar-TN-u-ca-islamic').format(now);
-}
-updateDate();
+        const jalaliDate = new Intl.DateTimeFormat('fa-IR').format(now);
+        document.getElementById('jalali-date').innerText = jalaliDate;
+
+        const gregorianDate = now.toLocaleDateString('en-GB');
+        document.getElementById('gregorian-date').innerText = gregorianDate;
+
+        const hijriDate = new Intl.DateTimeFormat('ar-SA-u-ca-islamic').format(now);
+        document.getElementById('hijri-date').innerText = hijriDate;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // لرزش دکمه‌ها
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', () => {
+            if (navigator.vibrate) {
+                navigator.vibrate(100);
+            }
+        });
+    });
+});
