@@ -1,89 +1,79 @@
 body {
-    font-family: 'Vazir', sans-serif;
-    background-color: #E6E6FA; /* بنفش روشن */
+    background-color: #E6E6FA; /* Light purple */
+    font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
 .header {
-    position: relative;
-    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.clock {
+    color: blue;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.date {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 #welcome-text {
-    font-size: 1.8em;
+    font-size: 28px;
     font-weight: bold;
-    animation: colorChange 5s infinite alternate;
+    animation: rainbow 5s infinite;
 }
 
-@keyframes colorChange {
+@keyframes rainbow {
     0% { color: red; }
     25% { color: orange; }
-    50% { color: green; }
-    75% { color: blue; }
-    100% { color: purple; }
+    50% { color: yellow; }
+    75% { color: green; }
+    100% { color: blue; }
 }
 
-#clock, #date {
-    position: absolute;
-    top: 10px;
-    font-size: 1.2em;
-    font-weight: bold;
-}
-
-#clock {
-    left: 10px;
-    color: blue;
-}
-
-#date {
-    right: 10px;
-    color: red;
-}
-
-/* دکمه‌ها */
 .button-container {
     margin: 10px;
 }
 
 .btn {
-    display: inline-block;
-    padding: 15px 20px;
+    padding: 15px 25px;
     margin: 5px;
     border: 2px solid black;
     border-radius: 10px;
     font-weight: bold;
-    text-decoration: none;
     color: white;
-    transition: transform 0.2s, background 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    min-width: 100px;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* رنگ‌بندی دکمه‌ها */
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
 .orange { background-color: orange; }
-.yellow { background-color: gold; }
+.yellow { background-color: yellow; color: black; }
 .lightgreen { background-color: lightgreen; color: black; }
-.blue { background-color: #0088CC; }
-.pink { background: linear-gradient(45deg, #E1306C, #F56040, #F77737, #FCAF45); }
-.darkgreen { background-color: #34A853; }
-
-/* افکت کلیک */
-.btn:active {
-    transform: scale(0.95);
+.blue { background-color: blue; }
+.green { background-color: green; }
+.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
-/* فوتر */
 footer {
-    margin: 20px 0;
-    font-size: 1.2em;
-}
-
-.coded {
+    margin-top: 20px;
+    font-size: 18px;
     font-weight: bold;
 }
 
-.purple { color: #C8A2C8; } /* یاسی */
-.red { color: #8B0000; }    /* زرشکی */
-.gray { color: gray; }      /* طوسی */
+.coded { color: #C8A2C8; }  /* Light purple */
+.by { color: #8B0000; }     /* Dark red */
+.name { color: gray; }      /* Gray */
