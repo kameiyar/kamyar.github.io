@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Colorful Site</title>
+    <title>Kamiyar Info</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <!-- متن انیمیشنی در بالای سایت -->
-    <div class="animated-text">Hi, My Name is Kami</div>
+    <div class="background"></div>
 
-    <!-- دکمه‌های تلگرام، اینستاگرام و شماره تلفن -->
-    <div class="floating-buttons">
-        <a href="https://t.me/kameiyar" class="button telegram">Telegram Me</a>
-        <a href="https://www.instagram.com/farahani_530?igsh=OXkzOTB2OWlkYW9u" class="button instagram">Instagram Me</a>
-        <a href="#phone" class="button phone">Show Phone</a>
+    <h1 class="animated-title">Kamiyar Info</h1>
+
+    <div class="buttons">
+        <a href="https://t.me/kameiyar" class="icon telegram">Telegram Me</a>
+        <a href="https://www.instagram.com/farahani_530?igsh=OXkzOTB2OWlkYW9u" class="icon instagram">Instagram Me</a>
+        <button class="icon phone" onclick="showNumber()">Show Number</button>
     </div>
 
-    <!-- شماره تلفن که بعد از کلیک نمایش داده می‌شود -->
-    <div id="phone" class="phone-number">+98 939 974 3277</div>
+    <div id="phone-number"></div>
 
-    <!-- جمله‌ی پایانی سایت -->
-    <div class="footer-text">
+    <div id="clock" class="clock-style"></div>
+
+    <p class="footer-text">
         <span class="coded">Coded</span> 
         <span class="by">By</span> 
         <span class="kamyar">Kamyar</span>
-    </div>
+    </p>
+
+    <script src="script.js"></script>
 </body>
 </html>
