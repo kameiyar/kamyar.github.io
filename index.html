@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamiyar Info</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazir-font@v30.1.0/dist/font-face.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- عنوان اصلی -->
+    <div class="background"></div>
+
+    <!-- عنوان -->
     <h1 class="animated-title">ℍ𝕀 𝕄𝕐 ℕ𝔸𝕄𝔼 𝕀𝕊 𝕂𝔸𝕄𝕐𝔸ℝ</h1>
+
+    <!-- دکمه‌ها -->
+    <div class="button-container">
+        <button onclick="window.open('https://t.me/yourusername', '_blank')">Telegram Me</button>
+        <button onclick="window.open('https://instagram.com/yourusername', '_blank')">Instagram Me</button>
+        <button id="callMeBtn" onclick="showNumber()">Call Me</button>
+    </div>
 
     <!-- ساعت -->
     <div id="clock"></div>
 
-    <!-- دکمه‌ها به صورت افقی -->
-    <div class="button-container">
-        <button onclick="window.open('https://t.me/your_telegram', '_blank')">Telegram Me</button>
-        <button onclick="window.open('https://instagram.com/your_instagram', '_blank')">Instagram Me</button>
-        <button id="callButton" onclick="showNumber()">Call Me</button>
-    </div>
+    <!-- نمایش شماره تلفن -->
+    <div id="phoneNumber"></div>
 
-    <!-- نوشته Coded By Kamyar -->
+    <!-- کد نویسنده -->
     <div class="footer">
-        <span class="coded">Coded</span>
-        <span class="by">By</span>
+        <span class="coded">Coded</span> 
+        <span class="by">By</span> 
         <span class="kamyar">Kamyar</span>
     </div>
 
