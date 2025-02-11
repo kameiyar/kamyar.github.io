@@ -1,79 +1,118 @@
+/* تنظیمات کلی */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Vazir', sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    color: white;
     text-align: center;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, purple);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s infinite alternate;
 }
 
-@keyframes gradientBG {
+/* انیمیشن پس‌زمینه */
+@keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
 }
 
-.animated-text {
-    font-size: 24px;
-    font-weight: bold;
-    animation: colorChange 5s infinite alternate;
-    margin-top: 20px;
-}
-
-@keyframes colorChange {
-    0% { color: #ff4b5c; }
-    25% { color: #ffa41b; }
-    50% { color: #00b8a9; }
-    75% { color: #3a86ff; }
-    100% { color: #8338ec; }
-}
-
-#clock {
+/* استایل عنوان */
+.animated-title {
     font-size: 40px;
     font-weight: bold;
+    animation: titleColors 5s infinite alternate;
     margin: 20px 0;
 }
 
-.buttons-container {
+@keyframes titleColors {
+    0% { color: red; }
+    20% { color: orange; }
+    40% { color: yellow; }
+    60% { color: green; }
+    80% { color: blue; }
+    100% { color: purple; }
+}
+
+/* استایل دکمه‌ها */
+.button-container {
     display: flex;
-    gap: 10px;
     justify-content: center;
-    margin-bottom: 10px;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 button {
-    background-color: transparent;
-    border: 2px solid white;
     padding: 10px 20px;
-    color: white;
-    border-radius: 10px;
     font-size: 16px;
-    transition: background 0.3s, color 0.3s;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: background 0.3s, transform 0.3s;
 }
 
 button:hover {
-    background-color: white;
-    color: black;
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
 }
 
-.coded-by {
-    font-size: 18px;
-    margin-bottom: 20px;
-    animation: fadeIn 3s ease-in-out infinite alternate;
+/* ساعت */
+#clock {
+    font-size: 48px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 10px red, 0 0 20px blue, 0 0 30px green;
+    animation: colorShift 5s infinite alternate;
+    margin: 20px 0;
 }
 
-.white { color: white; }
-.gold { color: gold; }
-.blue { color: lightblue; }
+@keyframes colorShift {
+    0% { color: red; text-shadow: 0 0 10px red, 0 0 20px orange; }
+    25% { color: orange; text-shadow: 0 0 10px orange, 0 0 20px yellow; }
+    50% { color: yellow; text-shadow: 0 0 10px yellow, 0 0 20px green; }
+    75% { color: green; text-shadow: 0 0 10px green, 0 0 20px blue; }
+    100% { color: blue; text-shadow: 0 0 10px blue, 0 0 20px red; }
+}
 
-@keyframes fadeIn {
-    from { opacity: 0.5; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
+/* شماره تلفن */
+#phoneNumber {
+    font-size: 24px;
+    font-weight: bold;
+    animation: phoneColors 4s infinite alternate;
+    margin: 15px 0;
+}
+
+@keyframes phoneColors {
+    0% { color: red; }
+    20% { color: orange; }
+    40% { color: yellow; }
+    60% { color: green; }
+    80% { color: blue; }
+    100% { color: purple; }
+}
+
+/* فوتر */
+.footer {
+    margin: 30px 0;
+    font-size: 20px;
+}
+
+.coded {
+    color: white;
+    animation: fade 2s infinite alternate;
+}
+
+.by {
+    color: gold;
+    animation: fade 2s infinite alternate;
+}
+
+.kamyar {
+    color: lightblue;
+    animation: fade 2s infinite alternate;
+}
+
+@keyframes fade {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
 }
