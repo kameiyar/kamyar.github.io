@@ -1,99 +1,72 @@
-/* تنظیمات کلی صفحه */
-body, html {
+body {
+    background-image: url('IMG_20250211_044652_754.jpg'); /* مسیر عکس پس‌زمینه */
+    background-repeat: repeat;    /* تکرار شونده */
+    background-size: auto;        /* اندازه اصلی عکس */
+    background-attachment: scroll;
+    
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background: #000; /* پس‌زمینه سیاه برای مواقعی که ویدیو لود نشه */
+    height: 100vh;
 }
 
-/* ویدیو پس‌زمینه */
-#video-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ویدیو کل صفحه رو می‌پوشونه */
-    z-index: -1; /* ویدیو زیر سایر محتوا قرار می‌گیره */
-}
-
-/* بخش محتوا با افکت شیشه‌ای */
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.15); /* پس‌زمینه نیمه‌شفاف */
-    padding: 30px 50px;
-    border-radius: 15px;
-    backdrop-filter: blur(10px); /* افکت شیشه‌ای */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* استایل عنوان */
+/* متن اصلی */
 h1 {
+    color: #fff;
     font-size: 2.5em;
-    margin: 0 0 20px;
-    color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    margin-top: 50px;
 }
 
-/* استایل لینک تلگرام */
-a {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #00aaff;
-    color: white;
+/* دکمه‌های شناور */
+.floating-button {
+    position: fixed;
+    right: 20px;               /* فاصله از سمت راست */
+    padding: 12px 20px;
     text-decoration: none;
-    border-radius: 8px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-/* افکت هاور روی لینک */
-a:hover {
-    background-color: #0088cc;
-    transform: scale(1.05); /* بزرگ‌نمایی هنگام هاور */
-}
-
-/* دکمه پخش صدا */
-button {
-    padding: 10px 20px;
-    background-color: #ff6600;
+    font-size: 18px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
     color: white;
     border: none;
-    border-radius: 8px;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.7); /* نیمه شفاف */
+    z-index: 1000;             /* بالاتر از سایر محتواها */
+}
+
+/* موقعیت دکمه‌ها */
+.telegram-button { top: 150px; background-color: #0088cc; }
+.instagram-button { top: 210px; background-color: #E4405F; }
+.show-number-button { top: 270px; background-color: #4CAF50; }
+
+/* افکت هنگام هاور */
+.floating-button:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* شماره تلفن (در حالت پیش‌فرض مخفی) */
+#phone-number {
+    position: fixed;
+    right: 20px;
+    top: 330px;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10px 15px;
+    border-radius: 8px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    height: 0;
+    overflow: hidden;
+    z-index: 1000;
 }
 
-/* افکت هاور روی دکمه */
-button:hover {
-    background-color: #e65c00;
-    transform: scale(1.05);
-}
-
-/* ریسپانسیو برای صفحه‌های کوچکتر */
-@media (max-width: 600px) {
-    .content {
-        padding: 20px;
-        width: 90%;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-
-    a, button {
-        font-size: 14px;
-        padding: 8px 16px;
-    }
+/* نمایش شماره تلفن هنگام کلیک */
+#toggle-number:checked + .show-number-button + #phone-number {
+    opacity: 1;
+    transform: translateY(0);
+    height: auto;
 }
