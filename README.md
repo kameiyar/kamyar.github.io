@@ -1,1 +1,0 @@
-# kamyar.github.io
